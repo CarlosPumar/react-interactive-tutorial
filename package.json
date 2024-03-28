@@ -1,0 +1,35 @@
+{
+  "name": "react-interactive-tutorial",
+  "version": "1.0.0",
+  "description": "Library to use interactive tutorials in react",
+  "main": "index.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosPumar/react-interactive-tutorial"
+  },
+  "scripts": {
+    "build": "npm run build:dist && npm run build:cjs",
+    "build:dis": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": ["interactive", "tutorial"],
+  "author": "Carlos Pumar",
+  "license": "ISC",
+  "peerDependencies": {
+    "@types/react": "^18.2.73",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.23",
+    "tslib": "^2.6.2"
+  }
+}
