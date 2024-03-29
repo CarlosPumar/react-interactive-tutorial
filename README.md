@@ -80,7 +80,7 @@ function App() {
           <>
             <Tutorial position={'right'} onClick={next}>
               <button onClick={next}>Next</button>
-              <button onClick={goTo('#first')}>Go to first</button>
+              <button onClick={() => goTo('#first')}>Go to first</button>
             </Tutorial>
             <Highlighted />
           </>
