@@ -28,7 +28,6 @@ import {
   TutorialStep,
   useTutorial
 } from 'react-interactive-tutorial';
-import Main from './components/Main';
 
 function App() {
   const steps: TutorialStep[] = [
