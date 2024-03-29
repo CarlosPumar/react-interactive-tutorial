@@ -1,6 +1,6 @@
 {
   "name": "react-interactive-tutorial",
-  "version": "1.0.10",
+  "version": "1.0.13",
   "description": "Library to use interactive tutorials in react",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -29,7 +29,8 @@
   ],
   "keywords": [
     "interactive",
-    "tutorial"
+    "tutorial",
+    "guide"
   ],
   "author": "Carlos Pumar",
   "license": "ISC",
