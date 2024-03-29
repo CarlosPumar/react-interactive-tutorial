@@ -9,7 +9,7 @@
   "types": "./dist/cjs/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CarlosPumar/react-interactive-tutorial"
+    "url": "git+https://github.com/CarlosPumar/react-interactive-tutorial.git"
   },
   "exports": {
     ".": {
