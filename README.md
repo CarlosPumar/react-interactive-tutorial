@@ -21,79 +21,94 @@ yarn add react-interactive-tutorial
 ## Usage :
 
 ```tsx
-import { Highlighted, Tutorial, TutorialProvider, TutorialStep, useTutorial } from 'react-interactive-tutorial'
-import Main from './components/Main'
+import {
+  Highlighted,
+  Tutorial,
+  TutorialProvider,
+  TutorialStep,
+  useTutorial
+} from 'react-interactive-tutorial';
+import Main from './components/Main';
 
 function App() {
-
   const steps: TutorialStep[] = [
     {
-      id: "welcome",
-      render({next, finish}) {
-        return <>
+      id: 'welcome',
+      render({ next, finish }) {
+        return (
+          <>
             <div className='welcome-position welcome-style'>
-                Welcome!
-                <button onClick={next}>Next</button>
-                <button onClick={finish}>Skip</button>
+              Welcome!
+              <button onClick={next}>Next</button>
+              <button onClick={finish}>Skip</button>
             </div>
-        </>
+          </>
+        );
       }
     },
     {
-      id: "#first",
-      render({next, finish}) {
-        return <>
+      id: '#first',
+      render({ next, finish }) {
+        return (
+          <>
             <Tutorial position={'left'} onClick={next}>
-                <button onClick={next}>Next</button>
-                <button onClick={finish}>Finish</button>
+              <button onClick={next}>Next</button>
+              <button onClick={finish}>Finish</button>
             </Tutorial>
-            <Highlighted style={{ marginLeft: '0.5em', marginTop: '0.5em' }}/>
-        </>
+            <Highlighted style={{ marginLeft: '0.5em', marginTop: '0.5em' }} />
+          </>
+        );
       }
     },
     {
-    id: "#second",
-    render({next, back}) {
-        return <>
+      id: '#second',
+      render({ next, back }) {
+        return (
+          <>
             <Tutorial position={'right'} onClick={next}>
-                <button onClick={next}>Next</button>
-                <button onClick={back}>Back</button>
+              <button onClick={next}>Next</button>
+              <button onClick={back}>Back</button>
             </Tutorial>
             <Highlighted />
-        </>
-    }
+          </>
+        );
+      }
     },
     {
-        id: "#third",
-        render({next, goTo}) {
-            return <>
-                <Tutorial position={'right'} onClick={next}>
-                    <button onClick={next}>Next</button>
-                    <button onClick={goTo('#first')}>Go to first</button>
-                </Tutorial>
-                <Highlighted />
-            </>
-        }
+      id: '#third',
+      render({ next, goTo }) {
+        return (
+          <>
+            <Tutorial position={'right'} onClick={next}>
+              <button onClick={next}>Next</button>
+              <button onClick={goTo('#first')}>Go to first</button>
+            </Tutorial>
+            <Highlighted />
+          </>
+        );
+      }
     }
-  ]
+  ];
 
   return (
     <TutorialProvider steps={steps}>
       <Main />
     </TutorialProvider>
-  )
+  );
 }
 
 function Main() {
-
-    const { start } = useTutorial();
-    return <>
-            <h1 id='first'>Title</h1>
-            <h2 id='second'>Subtitle</h3>
-            <section id='third'>Content</section>
-            <button onClick={start}>Start tutorial</button>
-           </>;
+  const { start } = useTutorial();
+  return (
+    <>
+      <h1 id='first'>Title</h1>
+      <h2 id='second'>Subtitle</h2>
+      <section id='third'>Content</section>
+      <button onClick={start}>Start tutorial</button>
+    </>
+  );
 }
+
 ```
 
 [npm-url]: https://www.npmjs.com/package/react-interactive-tutorial
