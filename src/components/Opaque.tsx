@@ -1,5 +1,5 @@
 import React from 'react';
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import {createPortal} from 'react-dom'
 
 const Opaque = ({...rest}: HTMLAttributes<HTMLDivElement>) => {

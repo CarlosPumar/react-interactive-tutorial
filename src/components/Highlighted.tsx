@@ -1,7 +1,7 @@
 import React from "react";
-import { HTMLAttributes } from "react";
-import { useTutorial } from "./TutorialProvider";
-import { Position } from "../types";
+import type { HTMLAttributes } from "react";
+import { useTutorial } from "./TutorialProvider.js";
+import type { Position } from "../types/type.js";
 
 interface HighlightedProps extends HTMLAttributes<HTMLDivElement> {
     props?: Position;

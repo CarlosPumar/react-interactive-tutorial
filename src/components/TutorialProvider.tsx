@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ReactNode, createContext, useEffect, useState } from "react";
-import Opaque from "./Opaque";
-import { Position, TutorialStep } from "..";
+import { type ReactNode, createContext, useEffect, useState } from "react";
+import Opaque from "./Opaque.js";
+import type { Position, TutorialStep } from "../types/type.js";
 
 type TutorialContextType = {
     start: () => void;
@@ -25,7 +25,7 @@ export const TutorialProvider = ({ steps, children }: Props) => {
 
     const _getData = (newIndex: number) => {
         _handleResize(newIndex);
-        setCurrentStep(steps[newIndex]);
+        setCurrentStep(steps[newIndex] || null);
         setIndex(newIndex);
     }
 
@@ -51,7 +51,12 @@ export const TutorialProvider = ({ steps, children }: Props) => {
     }
 
     const goTo = (id: string) => {
-        const newIndex = steps.findIndex(step => step.id === id)
+        let i = 0;
+        let newIndex = -1;
+        steps.forEach(step => {
+            if (step.id === id) newIndex = i;
+            i++;
+        })
         if (newIndex < 0) return;
         _getData(newIndex)
     }
@@ -61,7 +66,7 @@ export const TutorialProvider = ({ steps, children }: Props) => {
     const _handleResize = (index: number) => {    
         if (index === null) return;
 
-        const stepSelectedHTML = document.querySelector(steps[index].id);
+        const stepSelectedHTML = document.querySelector(steps[index]?.id || '');
         if (!stepSelectedHTML) return;
 
         const props = stepSelectedHTML.getBoundingClientRect();

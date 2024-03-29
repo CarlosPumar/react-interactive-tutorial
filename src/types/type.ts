@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-type TutorialStep = {
+export interface TutorialStep {
     id: string;
     render: (renderProps: RederProps) => ReactNode;
 }
 
-type Position = {
+export interface Position {
     x: number;
     y: number;
     top: number;
@@ -16,7 +16,7 @@ type Position = {
     height: number;
 }
 
-type RederProps = {
+export interface RederProps {
     props: Position, 
     next?: () => void, 
     back?: () => void, 

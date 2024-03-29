@@ -1,6 +1,6 @@
-import React, { HTMLAttributes, useRef } from "react";
-import { useTutorial } from "./TutorialProvider";
-import { Position } from "..";
+import React, { type HTMLAttributes, useRef } from "react";
+import { useTutorial } from "./TutorialProvider.js";
+import type { Position } from "../types/type.js";
 
 interface TutorialProps  extends HTMLAttributes<HTMLDivElement> {
     position: 'left' | 'right'
