@@ -32,21 +32,28 @@ import {
 function App() {
   const steps: TutorialStep[] = [
     {
-      id: 'welcome',
-      render({ next, finish }) {
+      id: "_welcome", // "_" indicates no floating element related
+      render({ next }) {
         return (
           <>
-            <div className='welcome-position welcome-style'>
-              Welcome!
-              <button onClick={next}>Next</button>
-              <button onClick={finish}>Skip</button>
-            </div>
+            <Tutorial
+              onClick={next}
+              position={{
+                left: "50%", // centering element
+                top: "50%",
+              }}
+              style={{
+                transform: "translate(-50%, -50%)", // centering element
+              }}
+            >
+              <button onClick={next}>Start!!!</button>
+            </Tutorial>
           </>
         );
-      }
+      },
     },
     {
-      id: '#first',
+      id: '#first', // "#" indicates id
       render({ next, finish }) {
         return (
           <>
@@ -80,7 +87,7 @@ function App() {
           <>
             <Tutorial position={'right'} onClick={next}>
               <button onClick={next}>Next</button>
-              <button onClick={() => goTo('#first')}>Go to first</button>
+              <button onClick={goTo('#first')}>Go to first</button>
             </Tutorial>
             <Highlighted />
           </>
