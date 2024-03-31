@@ -6,20 +6,20 @@ export interface TutorialStep {
 }
 
 export interface Position {
-    x: number;
-    y: number;
-    top: number;
-    right: number;
-    left: number;
-    bottom: number;
-    width: number;
-    height: number;
+    x?: string | number;
+    y?:  string | number;
+    top?:  string | number;
+    right?:  string | number;
+    left?: string | number;
+    bottom?: string | number;
+    width?: string | number;
+    height?: string | number;
 }
 
 export interface RederProps {
-    props: Position, 
-    next?: () => void, 
-    back?: () => void, 
-    finish?: () => void, 
-    goTo?: (id: string) => void
+    position?: Position, 
+    next: () => void, 
+    back: () => void, 
+    finish: () => void, 
+    goTo: (id: string) => () => void
 }
